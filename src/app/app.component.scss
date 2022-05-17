@@ -1,0 +1,14 @@
+.bs-btn-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  button {
+    min-width: 120px;
+    min-height: 48px;
+  }
+}
