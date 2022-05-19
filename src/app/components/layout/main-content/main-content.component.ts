@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-content.component.scss'],
 })
 export class MainContentComponent implements OnInit {
-  script = '<script>alert("This alert will not be called!!")</script>';
-  div = '<div>this is a div</div>';
+  script = '<h2>Some text beofere script elem</h2><script>alert("This alert will not be called!!")</script>';
+  div = '<h1>this is a div</h1>';
 
   constructor() {}
 
