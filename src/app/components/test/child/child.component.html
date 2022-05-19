@@ -1,10 +1,15 @@
 <div class="text-blue-500 text-lg m-4 border border-blue-500">
+
+  <ng-content></ng-content>
+
   THIS IS CHILD COMPONENT --- {{value}}
 
 
   <button (click)="btnClickHandler()"
           class="text-white border bg-blue-500 rounded outline-none p-2 m-3">
-          Child is crying
-        </button>
+    <!-- Child is crying -->
 
+    <ng-content select="h2"></ng-content>
+
+  </button>
 </div>

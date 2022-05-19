@@ -8,6 +8,15 @@
          class="border bg-red-50" />
 
   <app-child [value]="inputValue"
-             (childCrying)="childCryingEventHandler($event)"></app-child>
+             (childCrying)="childCryingEventHandler($event)">
+    <h1>THIS HEADER IS A CONTENT TO CHILD ELEMENT FROM PARENT</h1>
+
+    <h2>Buton Label</h2>
+    <button class="bg-green-400"
+    id="testClass"></button>
+  </app-child>
+
+
+
 
 </div>
