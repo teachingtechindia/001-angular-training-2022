@@ -6,6 +6,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { MainContentComponent } from './components/layout/main-content/main-content.component';
+import { ParentComponent } from './components/test/parent/parent.component';
+import { ChildComponent } from './components/test/child/child.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { MainContentComponent } from './components/layout/main-content/main-cont
     HeaderComponent,
     FooterComponent,
     MainContentComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [BrowserModule],
   providers: [],
