@@ -4,3 +4,19 @@
 
 <p [innerHtml]="div"></p>
 <p [innerHtml]="script"></p>
+
+
+<div [ngStyle]="{color: 'red'}">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ab animi cupiditate voluptatum quis vitae fugiat
+  earum ad iure nostrum ut, ipsam doloremque voluptates at accusamus, nam, nulla voluptatem? Eligendi?
+</div>
+
+
+<div [ngStyle]="getDivStyle()">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic necessitatibus illo ab voluptates.
+</div>
+
+
+<div [ngClass]="{'my-class': noOfProd > 0}">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. At, soluta!
+</div>
