@@ -2,8 +2,12 @@
 
   <h1>This is parent class</h1>
 
-  <input (change)="inputChanged($event)" class="border bg-red-50"/>
+  <h3>Messge from child compo: {{messgeFromChildComp}}</h3>
 
-  <app-child [value]="inputValue"></app-child>
+  <input (change)="inputChanged($event)"
+         class="border bg-red-50" />
+
+  <app-child [value]="inputValue"
+             (childCrying)="childCryingEventHandler($event)"></app-child>
 
 </div>

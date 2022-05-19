@@ -3,20 +3,23 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.scss']
+  styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
+  inputValue = '';
 
-  inputValue = ''
+  messgeFromChildComp = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   inputChanged(event: any) {
     console.log(event.target.value);
     this.inputValue = event.target.value;
   }
 
+  childCryingEventHandler(event: string) {
+    this.messgeFromChildComp = event;
+  }
 }
