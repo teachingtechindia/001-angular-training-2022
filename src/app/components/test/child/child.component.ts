@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChildMessageService } from 'src/app/services/child-message.service';
 
 @Component({
   selector: 'app-child',
@@ -9,7 +10,10 @@ export class ChildComponent implements OnInit {
   @Input() value = '';
   @Output() childCrying = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(public childMessageService: ChildMessageService) {
+    this.childMessageService.messageFromChild =
+      'CHILD COMPONENT HAS SET THIS VALUE';
+  }
 
   ngOnInit(): void {}
 

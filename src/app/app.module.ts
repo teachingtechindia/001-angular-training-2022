@@ -9,6 +9,7 @@ import { MainContentComponent } from './components/layout/main-content/main-cont
 import { ParentComponent } from './components/test/parent/parent.component';
 import { ChildComponent } from './components/test/child/child.component';
 import { GrandparentComponent } from './components/test/grandparent/grandparent.component';
+import { ChildMessageService } from './services/child-message.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { GrandparentComponent } from './components/test/grandparent/grandparent.
     GrandparentComponent,
   ],
   imports: [BrowserModule],
-  providers: [],
+  providers: [ChildMessageService],
   bootstrap: [AppComponent],
   exports: [HeaderComponent, FooterComponent, MainContentComponent],
 })

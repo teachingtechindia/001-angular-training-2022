@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChildMessageService } from 'src/app/services/child-message.service';
 
 @Component({
   selector: 'app-parent',
@@ -11,7 +12,11 @@ export class ParentComponent implements OnInit {
 
   messgeFromChildComp = '';
 
-  constructor() {}
+  constructor(public childMessageService: ChildMessageService) {
+    setTimeout(() => {
+      window.alert(this.childMessageService.messageFromChild);
+    }, 2000);
+  }
 
   ngOnInit(): void {}
 
