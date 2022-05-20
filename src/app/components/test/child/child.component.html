@@ -6,10 +6,12 @@
 
 
   <button (click)="btnClickHandler()"
-          class="text-white border bg-blue-500 rounded outline-none p-2 m-3">
-    <!-- Child is crying -->
-
-    <ng-content select="h2"></ng-content>
-
+          class="text-white border bg-orange-900 rounded outline-none p-2 m-3">
+    <div class="flex flex-col gap-4">
+      <ng-content></ng-content>
+      <ng-content select="#idBtn"></ng-content>
+      <ng-content select=".class-btn"></ng-content>
+      <ng-content select="[attrBtn]"></ng-content>
+    </div>
   </button>
 </div>
