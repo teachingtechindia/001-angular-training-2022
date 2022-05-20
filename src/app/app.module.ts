@@ -23,7 +23,7 @@ import { ChildMessageService } from './services/child-message.service';
     GrandparentComponent,
   ],
   imports: [BrowserModule],
-  providers: [ChildMessageService],
+  providers: [],
   bootstrap: [AppComponent],
   exports: [HeaderComponent, FooterComponent, MainContentComponent],
 })
