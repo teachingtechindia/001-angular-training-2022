@@ -1,4 +1,4 @@
-<div class="text-blue-500 text-lg m-4 border border-blue-500">
+<div class="text-blue-500 text-lg m-4 p-4 border-2 border-blue-500">
 
   <ng-content></ng-content>
 
@@ -7,11 +7,13 @@
 
   <button (click)="btnClickHandler()"
           class="text-white border bg-orange-900 rounded outline-none p-2 m-3">
-    <div class="flex flex-col gap-4">
-      <ng-content></ng-content>
-      <ng-content select="#idBtn"></ng-content>
-      <ng-content select=".class-btn"></ng-content>
-      <ng-content select="[attrBtn]"></ng-content>
-    </div>
+    send message to parent
   </button>
+
+  <div class="flex flex-col gap-4">
+    <ng-content></ng-content>
+    <ng-content select="#idBtn"></ng-content>
+    <ng-content select=".class-btn"></ng-content>
+    <ng-content select="[attrBtn]"></ng-content>
+  </div>
 </div>

@@ -8,6 +8,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { MainContentComponent } from './components/layout/main-content/main-content.component';
 import { ParentComponent } from './components/test/parent/parent.component';
 import { ChildComponent } from './components/test/child/child.component';
+import { GrandparentComponent } from './components/test/grandparent/grandparent.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ChildComponent } from './components/test/child/child.component';
     MainContentComponent,
     ParentComponent,
     ChildComponent,
+    GrandparentComponent,
   ],
   imports: [BrowserModule],
   providers: [],

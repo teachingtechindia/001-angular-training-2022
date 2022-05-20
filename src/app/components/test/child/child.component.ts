@@ -15,6 +15,6 @@ export class ChildComponent implements OnInit {
 
   btnClickHandler() {
     console.log('ChildComponent: btnClickHandler()');
-    this.childCrying.emit('Child crying...');
+    this.childCrying.emit('Happy Child!!');
   }
 }

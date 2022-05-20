@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   inputValue = '';
+  @Output() childCryingFromParent = new EventEmitter<string>();
 
   messgeFromChildComp = '';
 
@@ -21,5 +22,6 @@ export class ParentComponent implements OnInit {
 
   childCryingEventHandler(event: string) {
     this.messgeFromChildComp = event;
+    this.childCryingFromParent.next(event);
   }
 }
