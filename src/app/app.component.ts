@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { tap, map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,7 @@ export class AppComponent {
 
       const intervalInstance = setInterval(() => {
         subscriberOrObserverOrConsumer.next(count++);
-        console.log('sending count: ', count);
+        // console.log('sending count: ', count);
       }, 1000);
 
       // Observable teardown function
@@ -47,11 +48,17 @@ export class AppComponent {
     });
 
     // Subscribing to Observable
-    const subscription = myObservable$.subscribe(
-      (data) => console.log(data),
-      (error) => console.log(error),
-      () => console.log('Observable completed')
-    );
+    const subscription = myObservable$
+      .pipe(
+        tap((d) => console.log('tap: ', d)),
+        filter((d:any) => d % 2 === 0),
+        map((d: any) => d * 2)
+      )
+      .subscribe(
+        (data) => console.log(data),
+        (error) => console.log(error),
+        () => console.log('Observable completed')
+      );
 
     // Unsubscribing from Observable
     setTimeout(() => {
