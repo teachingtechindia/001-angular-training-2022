@@ -18,24 +18,45 @@ export class AppComponent {
     // });
 
     // Creating Observable
-    const myObservable = new Observable((subscriberOrObserverOrConsumer) => {
-      subscriberOrObserverOrConsumer.next(1);
-      subscriberOrObserverOrConsumer.next(2);
+    const myObservable$ = new Observable((subscriberOrObserverOrConsumer) => {
+      let count = 0;
 
-      setInterval(() => {
-        subscriberOrObserverOrConsumer.next(new Date());
-        console.log('inside onbservable');
+      subscriberOrObserverOrConsumer.next(count++);
+      subscriberOrObserverOrConsumer.next(count++);
+
+      // const interval1 = setInterval(() => {
+      //   if (count < 3) {
+      //     subscriberOrObserverOrConsumer.error('Sometime went wrong');
+      //   } else if (count < 5) {
+      //     subscriberOrObserverOrConsumer.next(count++);
+      //   } else {
+      //     subscriberOrObserverOrConsumer.complete();
+      //   }
+      // }, 1000);
+
+      const intervalInstance = setInterval(() => {
+        subscriberOrObserverOrConsumer.next(count++);
+        console.log('sending count: ', count);
       }, 1000);
+
+      // Observable teardown function
+      return () => {
+        console.log('Observable teardown function called');
+        clearInterval(intervalInstance);
+      };
     });
 
     // Subscribing to Observable
-    const subscription = myObservable.subscribe((data) => {
-      console.log(data);
-    });
+    const subscription = myObservable$.subscribe(
+      (data) => console.log(data),
+      (error) => console.log(error),
+      () => console.log('Observable completed')
+    );
 
     // Unsubscribing from Observable
     setTimeout(() => {
       subscription.unsubscribe();
+      console.log('Unsubscribed');
     }, 5000);
   }
 }
