@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,27 +13,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ChildComponent } from './components/test/child/child.component';
 import { GrandparentComponent } from './components/test/grandparent/grandparent.component';
 import { ParentComponent } from './components/test/parent/parent.component';
-
-const ROUTES: Routes = [
-  {
-    path: '',
-    redirectTo: 'contact',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent,
-    // redirectTo: 'contact',
-  },
-];
 
 @NgModule({
   declarations: [
@@ -49,10 +28,7 @@ const ROUTES: Routes = [
     ContactComponent,
     PageNotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(ROUTES, { enableTracing: false }),
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
   exports: [HeaderComponent, FooterComponent, MainContentComponent],
