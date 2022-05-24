@@ -1,11 +1,14 @@
-<!-- <app-layout></app-layout> -->
-<!-- <app-grandparent></app-grandparent> -->
+<header>
+  <a routerLink="/home"
+     routerLinkActive="acitve-route-class">Home</a>
+  <a routerLink="/posts"
+     routerLinkActive="acitve-route-class">Posts</a>
+  <a routerLink="/contact"
+     routerLinkActive="acitve-route-class">Contacts</a>
+</header>
 
-<button routerLink="/home">GOTO HOME PAGE </button>
-<br>
-<br>
-<button routerLink="/contact">GOTO CONTACT PAGE </button>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-<br>
-<br>
-<router-outlet></router-outlet>
+<footer></footer>

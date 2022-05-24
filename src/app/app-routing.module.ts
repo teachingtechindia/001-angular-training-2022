@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ContactComponent } from './components/contact/contact.component';
-import { HomeComponent } from './components/home/home.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 
 @NgModule({
   imports: [
@@ -12,7 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
       [
         {
           path: '',
-          redirectTo: 'contact',
+          redirectTo: 'home',
           pathMatch: 'full',
         },
         {
@@ -21,12 +20,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
         },
         {
           path: 'contact',
-          component: ContactComponent,
+          component: ContactsComponent,
         },
         {
           path: '**',
-          component: PageNotFoundComponent,
-          // redirectTo: 'contact',
+          redirectTo: 'home',
         },
       ],
       { enableTracing: false }

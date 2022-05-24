@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ChildComponent } from './components/test/child/child.component';
 import { GrandparentComponent } from './components/test/grandparent/grandparent.component';
 import { ParentComponent } from './components/test/parent/parent.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ParentComponent } from './components/test/parent/parent.component';
     HomeComponent,
     ContactComponent,
     PageNotFoundComponent,
+    ContactsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

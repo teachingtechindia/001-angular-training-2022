@@ -1,3 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+.acitve-route-class {
+  border-bottom: 3px solid tomato !important;
+  color: tomato !important;
+}
