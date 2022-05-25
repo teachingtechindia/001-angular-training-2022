@@ -1,8 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { UserTypeAccessGuard } from './guards/user-type-access.guard';
+import { SigninComponent } from './pages/auth/signin/signin.component';
+import { SignupComponent } from './pages/auth/signup/signup.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   imports: [
@@ -15,12 +18,21 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
           pathMatch: 'full',
         },
         {
+          path: 'signin',
+          component: SigninComponent,
+        },
+        {
+          path: 'signup',
+          component: SignupComponent,
+        },
+        {
           path: 'home',
           component: HomeComponent,
         },
         {
           path: 'contact',
           component: ContactsComponent,
+          canActivate: [UserTypeAccessGuard],
         },
         {
           path: 'posts',
@@ -32,7 +44,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
           redirectTo: 'home',
         },
       ],
-      { enableTracing: false }
+      { enableTracing: true }
     ),
   ],
   exports: [RouterModule],

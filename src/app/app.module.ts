@@ -14,6 +14,8 @@ import { ChildComponent } from './components/test/child/child.component';
 import { GrandparentComponent } from './components/test/grandparent/grandparent.component';
 import { ParentComponent } from './components/test/parent/parent.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { SigninComponent } from './pages/auth/signin/signin.component';
+import { SignupComponent } from './pages/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
     ContactComponent,
     PageNotFoundComponent,
     ContactsComponent,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
