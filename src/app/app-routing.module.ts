@@ -23,6 +23,11 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
           component: ContactsComponent,
         },
         {
+          path: 'posts',
+          loadChildren: () =>
+            import('./pages/posts/posts.module').then((m) => m.PostsModule),
+        },
+        {
           path: '**',
           redirectTo: 'home',
         },
