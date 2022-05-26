@@ -6,6 +6,7 @@ import { SigninComponent } from './pages/auth/signin/signin.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ListComponent } from './pages/movies/list/list.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,10 @@ import { HomeComponent } from './pages/home/home.component';
           path: 'posts',
           loadChildren: () =>
             import('./pages/posts/posts.module').then((m) => m.PostsModule),
+        },
+        {
+          path: 'movie-list',
+          component: ListComponent,
         },
         {
           path: '**',

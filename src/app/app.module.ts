@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -18,6 +18,8 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { SigninComponent } from './pages/auth/signin/signin.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
 import { AuthService } from './services/auth.service';
+import { ListComponent } from './pages/movies/list/list.component';
+import { AuthTokenReqHeaderInterceptor } from './services/auth-token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,22 @@ import { AuthService } from './services/auth.service';
     ContactsComponent,
     SigninComponent,
     SignupComponent,
+    ListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    // {
+    //   provide: AuthService,
+    //   useClass: AuthService,
+    //   multi: false,
+    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenReqHeaderInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
   exports: [HeaderComponent, FooterComponent, MainContentComponent],
 })
