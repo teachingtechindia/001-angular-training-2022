@@ -10,6 +10,7 @@ import { ChildMessageService } from './services/child-message.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  data: any;
   constructor(
     private childMessageService: ChildMessageService,
     private httpClient: HttpClient
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit {
       .get('https://jsonplaceholder.typicode.com/todos')
       .subscribe((data) => {
         console.log('VK: APP COMPONENT : callApi : data', data);
+        this.data = data;
       });
   }
 }

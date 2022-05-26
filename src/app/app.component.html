@@ -9,6 +9,13 @@
 
 <main>
   <router-outlet></router-outlet>
+
+  <ul>
+    <li *ngFor="let item of data" class="border m-4 p-4 flex flex-col gap-4">
+      {{item.id}} :: {{item.title}}
+    </li>
+  </ul>
+
 </main>
 
 <footer></footer>
