@@ -1,26 +1,30 @@
-<div class="container h-screen">
-
+<div class="w-full h-screen flex justify-center">
 
   <div
-    class="mt-10 flex flex-col items-center justify-center gap-8 py-8 px-4 border-2 rounded-xl border-green-300 shadow-2xl">
-    <h1>Sign In</h1>
-    <div class="flex flex-row gap-4 items-center">
-      <label for="email">Email</label>
+    class=" max-w-[400px] mt-20 h-[400px] flex flex-col items-center justify-center gap-8 py-8 px-4 border-2 rounded-xl border-green-300 shadow-2xl">
+
+    <h1 class="text-green-700 mb-6 text-2xl">Sign-in to Angular Traning</h1>
+
+    <div class="grid grid-cols-12 gap-4 items-center">
+      <label for="email"
+        class="col-span-4 font-medium uppercase text-right">Email</label>
       <input type="email"
-        autocomplete="off"
-        class="p-2 border border-green-100"
+        autocomplete="new-password"
+        class="p-2 border border-green-100 col-span-8"
         (change)="emailInputChanged($event)" />
     </div>
 
-    <div class="flex flex-row gap-4">
-      <label for="password">Password</label>
+    <div class="grid grid-cols-12 gap-4">
+      <label for="password"
+        class="col-span-4 font-medium uppercase text-right">Password</label>
       <input type="password"
-        class="p-2 border border-green-100"
+        autocomplete="new-password"
+        class="p-2 border border-green-100 col-span-8"
         (change)="passwordInputChanged($event)" />
     </div>
 
     <button (click)="onSignin()"
-      class="rounded bg-green-700 text-white px-8 py-3">Sign In</button>
+      class="rounded bg-green-700 text-white w-full px-16 py-2 mt-10 text-xl uppercase">Sign In</button>
   </div>
 
 </div>
