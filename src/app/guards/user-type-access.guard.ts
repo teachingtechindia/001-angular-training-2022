@@ -22,7 +22,7 @@ export class UserTypeAccessGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const isSessionTokenExists = window.sessionStorage.getItem('sessionToken');
+    const isSessionTokenExists = window.localStorage.getItem('token');
 
     if (isSessionTokenExists) {
       return true;

@@ -4,6 +4,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.8);
@@ -24,4 +25,3 @@ header a:hover {
   border-bottom: 3px solid dodgerblue !important;
   color: dodgerblue !important;
 }
-

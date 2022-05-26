@@ -17,6 +17,7 @@ import { ParentComponent } from './components/test/parent/parent.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { SigninComponent } from './pages/auth/signin/signin.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { SignupComponent } from './pages/auth/signup/signup.component';
     SignupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   exports: [HeaderComponent, FooterComponent, MainContentComponent],
 })

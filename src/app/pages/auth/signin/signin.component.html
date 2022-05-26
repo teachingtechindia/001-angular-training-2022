@@ -1,1 +1,26 @@
-<p>signin works!</p>
+<div class="container h-screen">
+
+
+  <div
+    class="mt-10 flex flex-col items-center justify-center gap-8 py-8 px-4 border-2 rounded-xl border-green-300 shadow-2xl">
+    <h1>Sign In</h1>
+    <div class="flex flex-row gap-4 items-center">
+      <label for="email">Email</label>
+      <input type="email"
+        autocomplete="off"
+        class="p-2 border border-green-100"
+        (change)="emailInputChanged($event)" />
+    </div>
+
+    <div class="flex flex-row gap-4">
+      <label for="password">Password</label>
+      <input type="password"
+        class="p-2 border border-green-100"
+        (change)="passwordInputChanged($event)" />
+    </div>
+
+    <button (click)="onSignin()"
+      class="rounded bg-green-700 text-white px-8 py-3">Sign In</button>
+  </div>
+
+</div>
