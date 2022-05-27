@@ -48,4 +48,8 @@ export class AppComponent implements OnInit {
     window.localStorage.removeItem('email');
     this.router.navigateByUrl('/signin');
   }
+
+  btnClickHandler() {
+    window.alert('Hello World');
+  }
 }

@@ -20,6 +20,8 @@ import { SignupComponent } from './pages/auth/signup/signup.component';
 import { AuthService } from './services/auth.service';
 import { ListComponent } from './pages/movies/list/list.component';
 import { AuthTokenReqHeaderInterceptor } from './services/auth-token-interceptor.service';
+import { ButtonComponent } from './components/button/button.component';
+import { ButtonDirective } from './directives/button.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { AuthTokenReqHeaderInterceptor } from './services/auth-token-interceptor
     SigninComponent,
     SignupComponent,
     ListComponent,
+    ButtonComponent,
+    ButtonDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [

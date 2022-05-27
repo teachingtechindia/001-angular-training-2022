@@ -5,19 +5,19 @@
   <h3>Messge from child compo: {{messgeFromChildComp}}</h3>
 
   <input (change)="inputChanged($event)"
-         class="border bg-red-50" />
+    class="border bg-red-50" />
 
   <app-child [value]="inputValue"
-             (childCrying)="childCryingEventHandler($event)">
+    (childCrying)="childCryingEventHandler($event)">
 
     <!-- --------------- Passing html/view from parent to child ---------------- -->
     <p>This will be rendered in anonymmouse content slot</p>
     <h1>THIS HEADER IS A CONTENT TO CHILD ELEMENT FROM PARENT</h1>
     <button class="bg-red-400"
-            id="idBtn">ID BUTTON</button>
+      id="idBtn">ID BUTTON</button>
     <button class="bg-green-400 class-btn">CLASS BUTTON</button>
     <button class="bg-blue-400"
-            attrBtn>ATTRIBUTE BUTTON</button>
+      attrBtn>ATTRIBUTE BUTTON</button>
 
 
   </app-child>

@@ -1,3 +1,5 @@
+
+
 header {
   width: 100vw;
   min-height: 60px;
@@ -24,4 +26,9 @@ header a {
 header a:hover {
   border-bottom: 3px solid dodgerblue !important;
   color: dodgerblue !important;
+}
+
+
+.avoid-clicks {
+  pointer-events: none;
 }

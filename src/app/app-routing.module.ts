@@ -49,7 +49,7 @@ import { ListComponent } from './pages/movies/list/list.component';
           redirectTo: 'home',
         },
       ],
-      { enableTracing: true }
+      { enableTracing: false }
     ),
   ],
   exports: [RouterModule],

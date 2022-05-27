@@ -20,6 +20,18 @@
 </header>
 
 <main>
+  <at-button text="hello World"
+    class="avoid-clicks"
+    (click)="btnClickHandler()"
+    disabled
+    class="us">
+  </at-button>
+
+  <button atButton
+    (click)="btnClickHandler()">
+    Hello Angular
+  </button>
+
   <router-outlet></router-outlet>
 
   <ul *ngIf="false">
