@@ -10,7 +10,7 @@
       routerLinkActive="acitve-route-class">Moive List</a>
   </div>
 
-  <div class="flex flex-row gap-4 items-center">
+  <div class="flex flex-row items-center gap-4">
     <button *ngIf="!isLoggedIn"
       routerLink="/signin">Sign In</button>
     <button *ngIf="isLoggedIn"
@@ -21,7 +21,8 @@
 
 <main>
 
-  <button (click)="showPara = !showPara" class="btn btn-danger">Show Or Hide Paragraph</button>
+  <button (click)="showPara = !showPara"
+    class="btn btn-danger">Show Or Hide Paragraph</button>
 
   <p *atCustomNgIf="showPara">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore sint fuga illo voluptatum beatae. Vel placeat
@@ -29,12 +30,19 @@
     <b>Hello World!!</b>
   </p>
 
+  <p class="p-4 border-2 border-blue-500">Today is : <b>{{dob|date:'short'}}</b></p>
+  <p class="p-4 m-2 border-2 border-blue-500">Today is : <b>{{dob|date:'MM/d/yyyy, h:mm a'}}</b></p>
+  <p class="p-4 m-2 border-2 border-blue-500">Digit is : <b>{{dig|number:'2.2-2'}}</b></p>
+
+
+  <h2>{{val}}</h2>
+  <h2 *ngIf="myObs$ | async as myObsValue">{{myObsValue}}</h2>
 
   <router-outlet></router-outlet>
 
   <ul *ngIf="false">
     <li *ngFor="let item of data"
-      class="border m-4 p-4 flex flex-col gap-4">
+      class="flex flex-col gap-4 p-4 m-4 border">
       {{item.id}} :: {{item.title}}
     </li>
   </ul>

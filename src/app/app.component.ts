@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { interval, Observable, of, Subscription } from 'rxjs';
 import { tap, map, filter } from 'rxjs/operators';
 import { ChildMessageService } from './services/child-message.service';
 
@@ -18,12 +18,33 @@ export class AppComponent implements OnInit {
 
   showPara = true;
 
+  dob = new Date();
+
+  dig = 1234444.45678944;
+
+  myObs$;
+
+  subscription = new Subscription();
+
+  val = 0;
+
   constructor(
     private childMessageService: ChildMessageService,
     private httpClient: HttpClient,
     private router: Router
   ) {
     console.log('VK: APP COMPONENT : Constructor');
+
+    this.myObs$ = interval(2000);
+
+    // this.subscription = this.myObs$.subscribe((d) => {
+    //   console.log(d);
+    //   this.val = d;
+    // });
+  }
+
+  ngOnDestroy() {
+    // this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
