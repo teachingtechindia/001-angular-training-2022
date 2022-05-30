@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   email = '';
 
+  showPara = true;
+
   constructor(
     private childMessageService: ChildMessageService,
     private httpClient: HttpClient,

@@ -22,6 +22,7 @@ import { ListComponent } from './pages/movies/list/list.component';
 import { AuthTokenReqHeaderInterceptor } from './services/auth-token-interceptor.service';
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonDirective } from './directives/button.directive';
+import { CustomNgIfDirective } from './directives/custom-ng-if.directive';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ButtonDirective } from './directives/button.directive';
     ListComponent,
     ButtonComponent,
     ButtonDirective,
+    CustomNgIfDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [

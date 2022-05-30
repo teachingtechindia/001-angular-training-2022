@@ -21,7 +21,13 @@
 
 <main>
 
+  <button (click)="showPara = !showPara" class="btn btn-danger">Show Or Hide Paragraph</button>
 
+  <p *atCustomNgIf="showPara">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore sint fuga illo voluptatum beatae. Vel placeat
+    quibusdam a. Veritatis, enim!
+    <b>Hello World!!</b>
+  </p>
 
 
   <router-outlet></router-outlet>
