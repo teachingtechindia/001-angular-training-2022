@@ -28,6 +28,18 @@ export class AppComponent implements OnInit {
 
   val = 0;
 
+  total1 = 38;
+
+  total2 = 10;
+
+  increment1() {
+    this.total1 += 1;
+  }
+
+  increment2() {
+    this.total2 += 1;
+  }
+
   constructor(
     private childMessageService: ChildMessageService,
     private httpClient: HttpClient,

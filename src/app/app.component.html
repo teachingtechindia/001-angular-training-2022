@@ -44,6 +44,19 @@
 
 
 
+<button (click)="increment1()"
+  class="btn btn-success">Increment1</button>
+
+{{total1}} ==> {{total1 | marks}}
+
+<hr>
+<button (click)="increment2()"
+  class="btn btn-danger">Increment2</button>
+
+{{total2}}
+
+
+
   <router-outlet></router-outlet>
 
   <ul *ngIf="false">

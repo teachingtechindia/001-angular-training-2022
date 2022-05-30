@@ -24,6 +24,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { ButtonDirective } from './directives/button.directive';
 import { CustomNgIfDirective } from './directives/custom-ng-if.directive';
 import { AgePipe } from './pipes/age.pipe';
+import { MarksPipe } from './pipes/marks.pipe';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AgePipe } from './pipes/age.pipe';
     ButtonDirective,
     CustomNgIfDirective,
     AgePipe,
+    MarksPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [
@@ -62,6 +64,6 @@ import { AgePipe } from './pipes/age.pipe';
     },
   ],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, FooterComponent, MainContentComponent],
+  exports: [HeaderComponent, FooterComponent, MainContentComponent, MarksPipe],
 })
 export class AppModule {}
