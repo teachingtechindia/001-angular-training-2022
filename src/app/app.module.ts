@@ -23,6 +23,7 @@ import { AuthTokenReqHeaderInterceptor } from './services/auth-token-interceptor
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonDirective } from './directives/button.directive';
 import { CustomNgIfDirective } from './directives/custom-ng-if.directive';
+import { AgePipe } from './pipes/age.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CustomNgIfDirective } from './directives/custom-ng-if.directive';
     ButtonComponent,
     ButtonDirective,
     CustomNgIfDirective,
+    AgePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [

@@ -38,6 +38,12 @@
   <h2>{{val}}</h2>
   <h2 *ngIf="myObs$ | async as myObsValue">{{myObsValue}}</h2>
 
+  <p class="p-4 m-2 border-2 border-blue-500">My Age is :
+    <b>{{'1989-06-27'|age}}</b>
+  </p>
+
+
+
   <router-outlet></router-outlet>
 
   <ul *ngIf="false">

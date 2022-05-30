@@ -20,9 +20,9 @@ export class AppComponent implements OnInit {
 
   dob = new Date();
 
-  dig = 1234444.45678944;
+  dig:number = 1234444.45678944;
 
-  myObs$;
+  myObs$: Observable<number>;
 
   subscription = new Subscription();
 
