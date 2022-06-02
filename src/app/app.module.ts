@@ -25,6 +25,8 @@ import { ButtonDirective } from './directives/button.directive';
 import { CustomNgIfDirective } from './directives/custom-ng-if.directive';
 import { AgePipe } from './pipes/age.pipe';
 import { MarksPipe } from './pipes/marks.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,13 @@ import { MarksPipe } from './pipes/marks.pipe';
     AgePipe,
     MarksPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+  ],
   providers: [
     AuthService,
     // {
