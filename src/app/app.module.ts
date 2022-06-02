@@ -29,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { MatIconModule } from '@angular/material/icon';
     CustomNgIfDirective,
     AgePipe,
     MarksPipe,
+    MyDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    MatDialogModule,
   ],
   providers: [
     AuthService,

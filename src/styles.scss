@@ -8,5 +8,16 @@
   color: tomato !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.dlg-bd {
+  background-color: rgba(0, 0, 0, 0.9);
+}

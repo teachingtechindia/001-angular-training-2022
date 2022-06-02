@@ -1,0 +1,25 @@
+<header>
+  My Dialog Title
+</header>
+
+<main>
+
+  <h1>Data sent is:</h1>
+  <pre>
+    {{data | json}}
+  </pre>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, dolore!</p>
+  <img src="https://picsum.photos/200/300"
+    alt="test photo"
+    class="w-36">
+</main>
+
+<footer>
+  <button mat-button
+    (click)="close()">Cancel</button>
+
+  <button mat-button
+    (click)="done()"
+    color="primary">Ok</button>
+</footer>

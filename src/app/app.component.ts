@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { interval, Observable, of, Subscription } from 'rxjs';
 import { tap, map, filter } from 'rxjs/operators';
+import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
 import { ChildMessageService } from './services/child-message.service';
 
 @Component({
@@ -43,7 +45,8 @@ export class AppComponent implements OnInit {
   constructor(
     private childMessageService: ChildMessageService,
     private httpClient: HttpClient,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {
     console.log('VK: APP COMPONENT : Constructor');
 
@@ -90,5 +93,23 @@ export class AppComponent implements OnInit {
 
   primaryBtnclicked(e: any) {
     console.log('VK: APP COMPONENT : primaryBtnclicked : e', e);
+  }
+
+  openMyDlg() {
+    const dialogRef = this.dialog.open(MyDialogComponent, {
+      minWidth: '50vw',
+      width: '5vw',
+      minHeight: '50vh',
+      disableClose: true,
+      backdropClass: 'dlg-bd',
+      data: {
+        name: 'vivekkumar',
+        nationality: 'India',
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
   }
 }
