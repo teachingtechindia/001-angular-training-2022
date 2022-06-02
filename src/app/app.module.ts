@@ -27,6 +27,8 @@ import { AgePipe } from './pipes/age.pipe';
 import { MarksPipe } from './pipes/marks.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
   ],
   providers: [
     AuthService,

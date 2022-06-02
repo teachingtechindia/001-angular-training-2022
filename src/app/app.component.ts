@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   dob = new Date();
 
-  dig:number = 1234444.45678944;
+  dig: number = 1234444.45678944;
 
   myObs$: Observable<number>;
 
@@ -86,5 +86,9 @@ export class AppComponent implements OnInit {
 
   btnClickHandler() {
     window.alert('Hello World');
+  }
+
+  primaryBtnclicked(e: any) {
+    console.log('VK: APP COMPONENT : primaryBtnclicked : e', e);
   }
 }

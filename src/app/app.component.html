@@ -17,6 +17,30 @@
       (click)="onSignout()">Sign Out</button>
     <p>{{email}}</p>
   </div>
+
+
+  <button mat-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu">
+    Mat Menu
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>terminal</mat-icon>
+      <span>Redial Two</span>
+    </button>
+    <button mat-menu-item
+      disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+
 </header>
 
 <main>
@@ -73,7 +97,8 @@
     <div class="example-button-row">
       <button mat-flat-button>Basic</button>
       <button mat-flat-button
-        color="primary">Primary</button>
+        color="primary"
+        (click)="primaryBtnclicked($event)">Primary</button>
       <button mat-flat-button
         color="accent">Accent</button>
       <button mat-flat-button
