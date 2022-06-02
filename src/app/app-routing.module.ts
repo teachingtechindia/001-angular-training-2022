@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
 import { UserTypeAccessGuard } from './guards/user-type-access.guard';
 import { SigninComponent } from './pages/auth/signin/signin.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
@@ -43,6 +44,10 @@ import { ListComponent } from './pages/movies/list/list.component';
         {
           path: 'movie-list',
           component: ListComponent,
+        },
+        {
+          path: 'users-mgmt',
+          component: UsersMgmtComponent,
         },
         {
           path: '**',

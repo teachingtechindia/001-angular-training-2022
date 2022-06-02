@@ -31,6 +31,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
+import { MatTableModule } from '@angular/material/table';
+import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
     AgePipe,
     MarksPipe,
     MyDialogComponent,
+    UsersMgmtComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
     MatIconModule,
     MatMenuModule,
     MatDialogModule,
+    MatTableModule,
   ],
   providers: [
     AuthService,

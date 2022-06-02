@@ -17,106 +17,10 @@
       (click)="onSignout()">Sign Out</button>
     <p>{{email}}</p>
   </div>
-
-
-  <button mat-button
-    [matMenuTriggerFor]="menu"
-    aria-label="Example icon-button with a menu">
-    Mat Menu
-  </button>
-
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>terminal</mat-icon>
-      <span>Redial Two</span>
-    </button>
-    <button mat-menu-item
-      disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
-    </button>
-  </mat-menu>
-
 </header>
 
 <main>
-
-  <div class="flex flex-row items-center justify-center m-5">
-    <button mat-raised-button
-      color="accent"
-      (click)="openMyDlg()"> Open my Dialog</button>
-  </div>
-
-  <button (click)="showPara = !showPara"
-    class="btn btn-danger">Show Or Hide Paragraph</button>
-
-  <p *atCustomNgIf="showPara">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore sint fuga illo voluptatum beatae. Vel placeat
-    quibusdam a. Veritatis, enim!
-    <b>Hello World!!</b>
-  </p>
-
-  <p class="p-4 border-2 border-blue-500">Today is : <b>{{dob|date:'short'}}</b></p>
-  <p class="p-4 m-2 border-2 border-blue-500">Today is : <b>{{dob|date:'MM/d/yyyy, h:mm a'}}</b></p>
-  <p class="p-4 m-2 border-2 border-blue-500">Digit is : <b>{{dig|number:'2.2-2'}}</b></p>
-
-
-  <h2>{{val}}</h2>
-  <h2 *ngIf="myObs$ | async as myObsValue">{{myObsValue}}</h2>
-
-  <p class="p-4 m-2 border-2 border-blue-500">My Age is :
-    <b>{{'1989-06-27'|age}}</b>
-  </p>
-
-
-
-  <button (click)="increment1()"
-    class="btn btn-success">Increment1</button>
-
-  {{total1}} ==> {{total1 | marks}}
-
-  <hr>
-  <button (click)="increment2()"
-    class="btn btn-danger">Increment2</button>
-
-  {{total2}}
-
-
-
-
-
   <router-outlet></router-outlet>
-
-  <ul *ngIf="false">
-    <li *ngFor="let item of data"
-      class="flex flex-col gap-4 p-4 m-4 border">
-      {{item.id}} :: {{item.title}}
-    </li>
-  </ul>
-
-  <section>
-    <div class="example-label">Flat</div>
-    <div class="example-button-row">
-      <button mat-flat-button>Basic</button>
-      <button mat-flat-button
-        color="primary"
-        (click)="primaryBtnclicked($event)">Primary</button>
-      <button mat-flat-button
-        color="accent">Accent</button>
-      <button mat-flat-button
-        color="warn">Warn</button>
-      <button mat-flat-button
-        disabled>Disabled</button>
-      <a mat-flat-button
-        href="https://www.google.com/"
-        target="_blank">Link</a>
-    </div>
-  </section>
-
 </main>
 
 <footer></footer>
