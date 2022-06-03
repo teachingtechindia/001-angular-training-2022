@@ -16,7 +16,7 @@ export interface UserSettings {
 })
 export class UserSettingsFormsComponent implements OnInit {
   userSettings: UserSettings = {
-    name: 'Vivek Kumar',
+    name: '',
     emailOffers: true,
     interfaceStyle: 'dark',
     subscriptionType: 'Annual',
