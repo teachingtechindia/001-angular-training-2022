@@ -1,18 +1,11 @@
 <div class="container">
   <h2>User Settings</h2>
-
-
-  <form #settingForm="ngForm"
-    (ngSubmit)="onSubmit(settingForm)">
-
+  <form #form="ngForm">
     <div class="form-group">
       <label for="name">NAME</label>
       <input id="name"
-        name="name2"
-        type="text"
-        ngModel
-        required
-        minlength="5"
+        [(ngModel)]="userSettings.name"
+        name="name"
         class="form-control">
     </div>
 
@@ -21,7 +14,7 @@
         type="checkbox"
         name="emailOffers"
         id="emailOffers"
-        ngModel>
+        [(ngModel)]="userSettings.emailOffers">
       <label class="form-check-label"
         for="emailOffers">
         Email Special Offers
@@ -36,7 +29,7 @@
           name="interfaceStyle"
           id="lightInterface"
           value="light"
-          ngModel
+          [(ngModel)]="userSettings.interfaceStyle"
           checked>
         <label class="form-check-label"
           for="lightInterface">
@@ -48,7 +41,7 @@
           type="radio"
           name="interfaceStyle"
           id="mediumInterface"
-          ngModel
+          [(ngModel)]="userSettings.interfaceStyle"
           value="medium">
         <label class="form-check-label"
           for="mediumInterface">
@@ -59,7 +52,7 @@
         <input class="form-check-input"
           type="radio"
           name="interfaceStyle"
-          ngModel
+          [(ngModel)]="userSettings.interfaceStyle"
           id="darkInterface"
           value="dark">
         <label class="form-check-label"
@@ -74,7 +67,7 @@
       <select id="subscriptionType"
         class="form-control"
         name="subscriptionType"
-        ngModel>
+        [(ngModel)]="userSettings.subscriptionType">
         <option value="monthly">monthly</option>
         <option value="Annual">Annual</option>
         <option value="Lifetime">Lifetime</option>
@@ -85,18 +78,33 @@
       <label for="notes">Notes</label>
       <textarea id="notes"
         name="notes"
-        ngModel
+        [(ngModel)]="userSettings.notes"
         class="form-control"
         rows="3"></textarea>
     </div>
 
-
-    <button type="submit"
-      class="btn btn-primary">Sumbit Form</button>
+    <button class="btn btn-primary">SEND</button>
   </form>
-
-  <pre class="mt-5">
-{{settingForm.value | json}}
-  </pre>
-
 </div>
+
+
+<table class="table my-5 table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Form</th>
+      <th>Data Model</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+      <pre>
+          {{ form.value | json}}
+        </pre>
+    </td>
+    <td>
+      <pre>
+          {{ userSettings | json}}
+      </pre>
+    </td>
+  </tr>
+</table>
