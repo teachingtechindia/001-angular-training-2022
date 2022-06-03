@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>User Settings</h2>
+
+
+  <form #settingForm="ngForm"
+    (ngSubmit)="onSubmit(settingForm)">
+
+    <div class="m-3 form-group">
+      <label for="name">NAME</label>
+      <input id="name"
+        name="name2"
+        type="text"
+        ngModel
+        required
+        minlength="5"
+        class="form-control">
+    </div>
+
+
+    <button type="submit"
+      class="btn btn-primary">Sumbit Form</button>
+  </form>
+
+</div>

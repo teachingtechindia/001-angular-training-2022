@@ -33,6 +33,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
+import { TestingSchematicsComponent } from './components/testing-schematics/testing-schematics.component';
+import { FormsModule } from '@angular/forms';
+import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,8 @@ import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component
     MarksPipe,
     MyDialogComponent,
     UsersMgmtComponent,
+    TestingSchematicsComponent,
+    UserSettingsFormsComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +74,7 @@ import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component
     MatMenuModule,
     MatDialogModule,
     MatTableModule,
+    FormsModule
   ],
   providers: [
     AuthService,
