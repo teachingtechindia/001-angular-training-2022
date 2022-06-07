@@ -37,6 +37,7 @@ import { TestingSchematicsComponent } from './components/testing-schematics/test
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { UserSettingsReactiveFormComponent } from './components/user-settings-re
     TestingSchematicsComponent,
     UserSettingsFormsComponent,
     UserSettingsReactiveFormComponent,
+    UserRegistrationComponent,
   ],
   imports: [
     BrowserModule,

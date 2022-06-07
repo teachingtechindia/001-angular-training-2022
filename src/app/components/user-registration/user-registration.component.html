@@ -1,0 +1,160 @@
+<h2 class="my-5 text-center">User Registration - Dynamic Form using FormArray</h2>
+
+<form [formGroup]="regForm"
+  class="mx-5 jumbotron jumbotron-fluid"
+  (ngSubmit)="submitForm()">
+
+  <div formGroupName="basic"
+    class="container">
+    <div class="mb-5 text-center text-uppercase font-weight-bold">Basic Info</div>
+    <div class="form-group row">
+      <label for="firstName"
+        class="col-sm-3 col-form-label">First Name</label>
+      <input type="text"
+        formControlName="firstName"
+        class="form-control col-sm-9"
+        name="firstName" />
+    </div>
+
+    <div class="form-group row">
+      <label for="lastName"
+        class="col-sm-3 col-form-label">Last Name</label>
+      <input type="text"
+        formControlName="lastName"
+        class="form-control col-sm-9"
+        name="lastName" />
+    </div>
+
+    <div class="form-group row">
+      <label for="age"
+        class="col-sm-3 col-form-label">Age</label>
+      <input type="number"
+        formControlName="age"
+        class="form-control col-sm-9"
+        name="age" />
+    </div>
+  </div>
+
+
+  <div formGroupName="login"
+    class="container">
+    <div class="m-5 text-center text-uppercase font-weight-bold">Login Details</div>
+    <div class="form-group row">
+      <label for="username"
+        class="col-sm-3 col-form-label">Username</label>
+      <input type="text"
+        formControlName="username"
+        class="form-control col-sm-9"
+        name="username" />
+    </div>
+
+    <div class="form-group row">
+      <label for="email"
+        class="col-sm-3 col-form-label">Email</label>
+      <input type="email"
+        formControlName="email"
+        class="form-control col-sm-9"
+        name="email" />
+    </div>
+
+    <div class="form-group row">
+      <label for="password"
+        class="col-sm-3 col-form-label">Password</label>
+      <input type="password"
+        formControlName="password"
+        class="form-control col-sm-9"
+        name="password" />
+    </div>
+
+    <div class="form-group row">
+      <label for="RepeatPassword"
+        class="col-sm-3 col-form-label">Repeat Password</label>
+      <input type="password"
+        formControlName="repeatPassword"
+        class="form-control col-sm-9"
+        name="RepeatPassword" />
+    </div>
+
+    <div class="form-group row">
+      <label for="securityQuestion"
+        class="col-sm-3 col-form-label">Security Question</label>
+      <input type="text"
+        formControlName="securityQuestion"
+        class="form-control col-sm-9"
+        name="securityQuestion" />
+    </div>
+
+    <div class="form-group row">
+      <label for="securityAnswer"
+        class="col-sm-3 col-form-label">Security Answer</label>
+      <input type="text"
+        formControlName="securityAnswer"
+        class="form-control col-sm-9"
+        name="securityAnswer" />
+    </div>
+  </div>
+
+  <div formArrayName="addresses"
+    *ngFor="let address of addresses.controls; let i = index">
+    
+    <div [formGroupName]="i"
+      class="container">
+      <div class="m-5 text-center text-uppercase font-weight-bold">Address {{i}}</div>
+
+      <div class="form-group row">
+        <label for="{{'flat' + i}}"
+          class="col-form-label col-sm-3">Flat</label>
+        <input id="{{'flat' + i}}"
+          class="form-control col-sm-9"
+          type="text"
+          name="{{'flat' + i}}">
+      </div>
+
+      <div class="form-group row">
+        <label for="{{'street' + i}}"
+          class="col-form-label col-sm-3">Street</label>
+        <input id="{{'street' + i}}"
+          class="form-control col-sm-9"
+          type="text"
+          name="{{'street' + i}}">
+      </div>
+
+      <div class="form-group row">
+        <label for="{{'city' + i}}"
+          class="col-form-label col-sm-3">City</label>
+        <input id="{{'city' + i}}"
+          class="form-control col-sm-9"
+          type="text"
+          name="{{'city' + i}}">
+      </div>
+
+      <div class="form-group row">
+        <label for="{{'state' + i}}"
+          class="col-form-label col-sm-3">State</label>
+        <input id="{{'state' + i}}"
+          class="form-control col-sm-9"
+          type="text"
+          name="{{'state' + i}}">
+      </div>
+      <div class="form-group row">
+        <label for="{{'pin' + i}}"
+          class="col-form-label col-sm-3">Pincode</label>
+        <input id="{{'pin' + i}}"
+          class="form-control col-sm-9"
+          type="text"
+          name="{{'pin' + i}}">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mt-5 row"
+    style="display: flex; justify-content: flex-end;">
+    <button class="mr-5 btn btn-primary col-sm-3"
+      (click)="addAnotherAddressBtnClickHandler()"
+      type="button">Add Another Address</button>
+
+    <button class="mr-5 btn btn-success col-sm-3"
+      type="submit">Submit</button>
+  </div>
+</form>

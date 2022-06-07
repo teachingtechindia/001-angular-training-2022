@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
 import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
@@ -58,6 +59,10 @@ import { ListComponent } from './pages/movies/list/list.component';
         {
           path: 'reactive-form',
           component: UserSettingsReactiveFormComponent,
+        },
+        {
+          path: 'dynamic-form',
+          component: UserRegistrationComponent,
         },
         {
           path: '**',
