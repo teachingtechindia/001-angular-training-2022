@@ -34,8 +34,9 @@ import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
 import { TestingSchematicsComponent } from './components/testing-schematics/testing-schematics.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
+import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { UserSettingsFormsComponent } from './components/user-settings-forms/use
     UsersMgmtComponent,
     TestingSchematicsComponent,
     UserSettingsFormsComponent,
+    UserSettingsReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import { UserSettingsFormsComponent } from './components/user-settings-forms/use
     MatMenuModule,
     MatDialogModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,

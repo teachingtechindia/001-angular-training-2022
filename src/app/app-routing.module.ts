@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
+import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
 import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
 import { UserTypeAccessGuard } from './guards/user-type-access.guard';
 import { SigninComponent } from './pages/auth/signin/signin.component';
@@ -53,6 +54,10 @@ import { ListComponent } from './pages/movies/list/list.component';
         {
           path: 'forms',
           component: UserSettingsFormsComponent,
+        },
+        {
+          path: 'reactive-form',
+          component: UserSettingsReactiveFormComponent,
         },
         {
           path: '**',

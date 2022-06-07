@@ -1,0 +1,101 @@
+<div class="container">
+  <h2 class="mb-5">User Settings</h2>
+  <form (ngSubmit)="submitUserSettingsForm()"
+    [formGroup]="userSettingForm">
+
+    <div class="mb-4 form-group">
+      <label for="name"
+        class="font-weight-bold">NAME</label>
+      <input id="name"
+        formControlName="name"
+        [class.form-field-err]="formSubmitted && userSettingForm.get('name')?.invalid"
+        name="name"
+        class="form-control"
+        required>
+
+      <div [hidden]="!formSubmitted || userSettingForm.get('name')?.valid"
+        class="alert alert-danger">
+        Enter a name (required)
+      </div>
+    </div>
+
+    <div class="mb-4 form-check form-group">
+      <input class="form-check-input"
+        type="checkbox"
+        name="emailOffers"
+        formControlName="emailOffers"
+        id="emailOffers">
+      <label class="form-check-label font-weight-bold"
+        for="emailOffers">
+        Email Special Offers
+      </label>
+    </div>
+
+    <p class="font-weight-bold">User Interface Style</p>
+    <div class="mb-4 form-group">
+      <div class="form-check">
+        <input class="form-check-input"
+          type="radio"
+          name="interfaceStyle"
+          id="lightInterface"
+          value="light"
+          formControlName="interfaceStyle"
+          checked>
+        <label class="form-check-label"
+          for="lightInterface">
+          Light
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"
+          type="radio"
+          name="interfaceStyle"
+          id="mediumInterface"
+          formControlName="interfaceStyle"
+          value="medium">
+        <label class="form-check-label"
+          for="mediumInterface">
+          Medium
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input font-weight-bold"
+          type="radio"
+          name="interfaceStyle"
+          formControlName="interfaceStyle"
+          id="darkInterface"
+          value="dark">
+        <label class="form-check-label"
+          for="darkInterface">
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-5 form-group">
+      <label for="subscriptionType"
+        class="font-weight-bold">Subscription Type</label>
+      <select id="subscriptionType"
+        class="form-control"
+        name="subscriptionType"
+        formControlName="subscriptionType">
+        <option value="monthly">monthly</option>
+        <option value="Annual">Annual</option>
+        <option value="Lifetime">Lifetime</option>
+      </select>
+    </div>
+
+    <div class="mb-5 form-group">
+      <label for="notes"
+        class="font-weight-bold">Notes</label>
+      <textarea id="notes"
+        name="notes"
+        formControlName="notes"
+        class="form-control"
+        rows="3"></textarea>
+    </div>
+
+    <button type="submit"
+      class="btn btn-primary">SEND</button>
+  </form>
+</div>

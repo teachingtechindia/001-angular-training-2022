@@ -1,6 +1,7 @@
 <div class="container">
   <h2>User Settings</h2>
-  <form #form="ngForm">
+  <form #form="ngForm"
+    (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="name">NAME</label>
       <input id="name"
@@ -104,7 +105,8 @@
         rows="3"></textarea>
     </div>
 
-    <button class="btn btn-primary" [disabled]="form.invalid">SEND</button>
+    <button class="btn btn-primary"
+      [disabled]="form.invalid">SEND</button>
   </form>
 </div>
 
