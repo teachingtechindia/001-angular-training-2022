@@ -41,6 +41,28 @@ export class UserSettingsReactiveFormComponent implements OnInit {
       subscriptionType: [''],
       notes: [''],
     });
+
+    this.userSettingForm.setValue({
+      name: 'TEST NAME',
+      emailOffers: true,
+      interfaceStyle: '',
+      subscriptionType: '',
+      notes: 'SOME DEFAULT INITIAL VALUE',
+    });
+
+    // this.userSettingForm.valueChanges.subscribe((data) => {
+    //   console.log('VALUE CHANGED: >>> ', data);
+    // });
+
+    this.userSettingForm.get('emailOffers')?.valueChanges.subscribe((data) => {
+      console.log('emailOffers VALUE CHANGED: >>> ', data);
+
+      if (data === true) {
+        this.userSettingForm.patchValue({ notes: 'Email Offers are ON' });
+      } else {
+        this.userSettingForm.patchValue({ notes: 'Email Offers are OFF' });
+      }
+    });
   }
 
   ngOnInit(): void {}
