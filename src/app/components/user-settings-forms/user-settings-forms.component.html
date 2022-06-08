@@ -13,17 +13,17 @@
         maxlength="20"
         pattern="[a-zA-Z0-9]+"
         #nameInp="ngModel">
-      <div [hidden]="nameInp.valid || nameInp.untouched || nameInp.errors?.['required']"
+      <div [hidden]="nameInp.valid || nameInp.untouched || !nameInp.errors?.['required']"
         class="alert alert-danger">
         Enter a name (required)
       </div>
 
-      <div [hidden]="nameInp.valid || nameInp.untouched || nameInp.errors?.['minlength']"
+      <div [hidden]="nameInp.valid || nameInp.untouched || !nameInp.errors?.['minlength']"
         class="alert alert-danger">
         Minimum of 2 characters are needed
       </div>
 
-      <div [hidden]="nameInp.valid || nameInp.untouched || nameInp.errors?.['maxlength']"
+      <div [hidden]="nameInp.valid || nameInp.untouched || !nameInp.errors?.['maxlength']"
         class="alert alert-danger">
         Enter a name (required)
       </div>

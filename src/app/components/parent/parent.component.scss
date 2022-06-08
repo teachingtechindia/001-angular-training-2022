@@ -1,0 +1,26 @@
+:host {
+  margin: 20px;
+}
+
+:host div {
+  background-color: aquamarine;
+}
+
+:host div h1 {
+  color: brown;
+}
+
+img {
+  width: 40%;
+}
+
+.placeholder-btn {
+  font-size: 1rem;
+  padding: 0.75rem;
+  margin: 1.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: dodgerblue;
+  cursor: pointer;
+}

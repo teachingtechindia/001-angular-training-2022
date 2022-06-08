@@ -5,6 +5,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
 import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
+import { ViewContentQueryComponent } from './components/view-content-query/view-content-query.component';
 import { UserTypeAccessGuard } from './guards/user-type-access.guard';
 import { SigninComponent } from './pages/auth/signin/signin.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
@@ -64,6 +65,9 @@ import { ListComponent } from './pages/movies/list/list.component';
           path: 'dynamic-form',
           component: UserRegistrationComponent,
         },
+
+        { path: 'view-content-query', component: ViewContentQueryComponent },
+
         {
           path: '**',
           redirectTo: 'home',

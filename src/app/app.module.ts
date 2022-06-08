@@ -11,9 +11,9 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MainContentComponent } from './components/layout/main-content/main-content.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ChildComponent } from './components/test/child/child.component';
-import { GrandparentComponent } from './components/test/grandparent/grandparent.component';
-import { ParentComponent } from './components/test/parent/parent.component';
+// import { ChildComponent } from './components/test/child/child.component';
+// import { GrandparentComponent } from './components/test/grandparent/grandparent.component';
+// import { ParentComponent } from './components/test/parent/parent.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { SigninComponent } from './pages/auth/signin/signin.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
@@ -38,6 +38,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { ViewContentQueryComponent } from './components/view-content-query/view-content-query.component';
+import { ChildComponent } from './components/child/child.component';
+import { ParentComponent } from './components/parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
     MainContentComponent,
     ParentComponent,
     ChildComponent,
-    GrandparentComponent,
+    // GrandparentComponent,
     HomeComponent,
     ContactComponent,
     PageNotFoundComponent,
@@ -67,6 +70,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
     UserSettingsFormsComponent,
     UserSettingsReactiveFormComponent,
     UserRegistrationComponent,
+    ViewContentQueryComponent,
   ],
   imports: [
     BrowserModule,
