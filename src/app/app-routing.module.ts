@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { NgTemplateOutletContextComponent } from './components/ng-template-outlet-context/ng-template-outlet-context.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
@@ -67,7 +68,14 @@ import { ListComponent } from './pages/movies/list/list.component';
           component: UserRegistrationComponent,
         },
         { path: 'view-content-query', component: ViewContentQueryComponent },
-        { path: "view-container-ref", component: ViewContainerRefCompComponent },
+        {
+          path: 'view-container-ref',
+          component: ViewContainerRefCompComponent,
+        },
+        {
+          path: 'template-outlet',
+          component: NgTemplateOutletContextComponent,
+        },
         {
           path: '**',
           redirectTo: 'home',
