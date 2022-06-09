@@ -43,6 +43,10 @@ import { ChildComponent } from './components/child/child.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ViewContainerRefCompComponent } from './components/view-container-ref-comp/view-container-ref-comp.component';
 import { NgTemplateOutletContextComponent } from './components/ng-template-outlet-context/ng-template-outlet-context.component';
+import { DemoDynamicCompComponent } from './components/demo-dynamic-comp/demo-dynamic-comp.component';
+import { ErrorToastComponent } from './components/error-toast/error-toast.component';
+import { SuccessToastComponent } from './components/success-toast/success-toast.component';
+import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +79,10 @@ import { NgTemplateOutletContextComponent } from './components/ng-template-outle
     ViewContentQueryComponent,
     ViewContainerRefCompComponent,
     NgTemplateOutletContextComponent,
+    DemoDynamicCompComponent,
+    ErrorToastComponent,
+    SuccessToastComponent,
+    WarningToastComponent,
   ],
   imports: [
     BrowserModule,

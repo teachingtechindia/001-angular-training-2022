@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { DemoDynamicCompComponent } from './components/demo-dynamic-comp/demo-dynamic-comp.component';
 import { NgTemplateOutletContextComponent } from './components/ng-template-outlet-context/ng-template-outlet-context.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
@@ -76,6 +77,7 @@ import { ListComponent } from './pages/movies/list/list.component';
           path: 'template-outlet',
           component: NgTemplateOutletContextComponent,
         },
+        { path: 'dynamic-component', component: DemoDynamicCompComponent },
         {
           path: '**',
           redirectTo: 'home',
