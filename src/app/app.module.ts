@@ -41,6 +41,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { ViewContentQueryComponent } from './components/view-content-query/view-content-query.component';
 import { ChildComponent } from './components/child/child.component';
 import { ParentComponent } from './components/parent/parent.component';
+import { ViewContainerRefCompComponent } from './components/view-container-ref-comp/view-container-ref-comp.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ParentComponent } from './components/parent/parent.component';
     UserSettingsReactiveFormComponent,
     UserRegistrationComponent,
     ViewContentQueryComponent,
+    ViewContainerRefCompComponent,
   ],
   imports: [
     BrowserModule,
