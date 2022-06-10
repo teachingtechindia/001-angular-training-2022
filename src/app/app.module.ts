@@ -47,6 +47,9 @@ import { DemoDynamicCompComponent } from './components/demo-dynamic-comp/demo-dy
 import { ErrorToastComponent } from './components/error-toast/error-toast.component';
 import { SuccessToastComponent } from './components/success-toast/success-toast.component';
 import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
+import { PingComponent } from './components/ping/ping.component';
+import { PongComponent } from './components/pong/pong.component';
+import { RxjsSubjectComponent } from './components/rxjs-subject/rxjs-subject.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +86,9 @@ import { WarningToastComponent } from './components/warning-toast/warning-toast.
     ErrorToastComponent,
     SuccessToastComponent,
     WarningToastComponent,
+    PingComponent,
+    PongComponent,
+    RxjsSubjectComponent,
   ],
   imports: [
     BrowserModule,

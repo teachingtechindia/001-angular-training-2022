@@ -32,15 +32,11 @@ export class DemoDynamicCompComponent implements OnInit {
   createDynamicComponent() {
     const factory = this.cfr.resolveComponentFactory(this.getComponent());
     const componentRef = factory.create(this.injector);
-
     console.log(componentRef);
-
     if (this.toastViewContainerRef.length > 0) {
       this.toastViewContainerRef.clear();
     }
-
     this.toastViewContainerRef.insert(componentRef.hostView);
-    
     componentRef.instance[
       'msg'
     ] = `Settng ${this.toastType} Message at the time of creation`;

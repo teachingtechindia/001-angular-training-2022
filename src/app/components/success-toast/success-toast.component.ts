@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessToastComponent implements OnInit {
   public msg = 'Successful !!';
+  
   constructor() { }
 
   ngOnInit(): void {
