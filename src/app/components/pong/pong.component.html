@@ -9,3 +9,9 @@
 
 <button (click)="pingPongService.msgSubject.next(pingIp.value)"
   class="px-4 py-2 my-4 text-center bg-green-500 rounded">Pong</button>
+
+
+<div *ngIf="delayed">
+  <h2>Subscribing to subject after some delay</h2>
+  {{pingPongService.msgSubject | async}}
+</div>

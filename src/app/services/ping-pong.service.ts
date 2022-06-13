@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
-import { interval, Observable, Subject } from 'rxjs';
+import {
+  BehaviorSubject,
+  interval,
+  Observable,
+  ReplaySubject,
+  Subject,
+} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PingPongService {
-  msgSubject = new Subject<string>();
+  msgSubject = new BehaviorSubject<any>({});
 
   constructor() {
     // let i = 1;

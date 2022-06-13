@@ -7,3 +7,10 @@
   <legend>Pong Component</legend>
   <at-pong></at-pong>
 </fieldset>
+
+
+<ul>
+  <li *ngFor="let m of userlistService.usersSubject | async">
+    {{m.name}}
+  </li>
+</ul>

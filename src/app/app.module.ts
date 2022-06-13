@@ -50,6 +50,7 @@ import { WarningToastComponent } from './components/warning-toast/warning-toast.
 import { PingComponent } from './components/ping/ping.component';
 import { PongComponent } from './components/pong/pong.component';
 import { RxjsSubjectComponent } from './components/rxjs-subject/rxjs-subject.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { RxjsSubjectComponent } from './components/rxjs-subject/rxjs-subject.com
     RxjsSubjectComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -117,6 +119,12 @@ import { RxjsSubjectComponent } from './components/rxjs-subject/rxjs-subject.com
     },
   ],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, FooterComponent, MainContentComponent, MarksPipe],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    MainContentComponent,
+    MarksPipe,
+    CommonModule,
+  ],
 })
 export class AppModule {}
