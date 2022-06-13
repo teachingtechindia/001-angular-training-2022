@@ -18,6 +18,8 @@
       routerLinkActive="acitve-route-class">Dynamic Component</a>
     <a routerLink="rxjs-subject"
       routerLinkActive="acitve-route-class">RxJs Subject</a>
+    <a routerLink="todos"
+      routerLinkActive="acitve-route-class">Todos</a>
   </div>
 
   <div class="flex flex-row items-center gap-4">
@@ -30,12 +32,6 @@
 </header>
 
 <main>
-
-  <ul>
-    <li *ngFor="let m of userlistService.usersSubject | async">
-      {{m.name}}
-    </li>
-  </ul>
   <router-outlet></router-outlet>
 </main>
 

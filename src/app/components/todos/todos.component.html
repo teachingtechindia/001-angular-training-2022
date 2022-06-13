@@ -1,0 +1,12 @@
+<h1 class="m-4 text-center">Todos</h1>
+
+<button class="text-right btn btn-success"
+  routerLink="/todo-create">Create New Todo</button>
+
+<div class="container p-4">
+  <div class="card"
+    *ngFor="let todo of todos">
+    <h3>{{todo.title}}</h3>
+    <p>{{todo.description}}</p>
+  </div>
+</div>

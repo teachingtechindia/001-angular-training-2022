@@ -51,6 +51,12 @@ import { PingComponent } from './components/ping/ping.component';
 import { PongComponent } from './components/pong/pong.component';
 import { RxjsSubjectComponent } from './components/rxjs-subject/rxjs-subject.component';
 import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { todosReducer } from './store/todos/todos.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { TodosComponent } from './components/todos/todos.component';
+import { TodoCreateComponent } from './components/todo-create/todo-create.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +96,8 @@ import { CommonModule } from '@angular/common';
     PingComponent,
     PongComponent,
     RxjsSubjectComponent,
+    TodosComponent,
+    TodoCreateComponent,
   ],
   imports: [
     CommonModule,
@@ -104,6 +112,11 @@ import { CommonModule } from '@angular/common';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({ todos: todosReducer }, {}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [
     AuthService,

@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { DemoDynamicCompComponent } from './components/demo-dynamic-comp/demo-dynamic-comp.component';
 import { NgTemplateOutletContextComponent } from './components/ng-template-outlet-context/ng-template-outlet-context.component';
 import { RxjsSubjectComponent } from './components/rxjs-subject/rxjs-subject.component';
+import { TodoCreateComponent } from './components/todo-create/todo-create.component';
+import { TodosComponent } from './components/todos/todos.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
@@ -80,6 +82,8 @@ import { ListComponent } from './pages/movies/list/list.component';
         },
         { path: 'dynamic-component', component: DemoDynamicCompComponent },
         { path: 'rxjs-subject', component: RxjsSubjectComponent },
+        { path: 'todos', component: TodosComponent },
+        { path: 'todo-create', component: TodoCreateComponent },
         {
           path: '**',
           redirectTo: 'home',
