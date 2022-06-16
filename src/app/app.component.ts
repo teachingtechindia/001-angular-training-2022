@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { interval, Observable, of, Subscription } from 'rxjs';
-import { tap, map, filter } from 'rxjs/operators';
+import { tap, map, filter, mergeMap, switchMap } from 'rxjs/operators';
 import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
 import { ChildMessageService } from './services/child-message.service';
 import { UserlistService } from './services/userlist.service';
@@ -71,6 +71,14 @@ export class AppComponent implements OnInit {
     this.isLoggedIn = !!window.localStorage.getItem('token');
 
     // this.callApi();
+
+    const int1$ = interval(5000);
+
+    const int2$ = interval(400);
+
+    const int3$ = int1$.pipe(switchMap((x) => int2$)).subscribe((x) => {
+      console.log(x);
+    });
   }
 
   callApi() {

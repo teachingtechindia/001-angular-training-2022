@@ -10,6 +10,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { UserSettingsFormsComponent } from './components/user-settings-forms/user-settings-forms.component';
 import { UserSettingsReactiveFormComponent } from './components/user-settings-reactive-form/user-settings-reactive-form.component';
 import { UsersMgmtComponent } from './components/users-mgmt/users-mgmt.component';
+import { Posts2Component } from './components/posts2/posts2.component';
 import { ViewContainerRefCompComponent } from './components/view-container-ref-comp/view-container-ref-comp.component';
 import { ViewContentQueryComponent } from './components/view-content-query/view-content-query.component';
 import { UserTypeAccessGuard } from './guards/user-type-access.guard';
@@ -84,6 +85,7 @@ import { ListComponent } from './pages/movies/list/list.component';
         { path: 'rxjs-subject', component: RxjsSubjectComponent },
         { path: 'todos', component: TodosComponent },
         { path: 'todo-create', component: TodoCreateComponent },
+        { path: 'posts2', component: Posts2Component },
         {
           path: '**',
           redirectTo: 'home',

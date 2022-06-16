@@ -57,6 +57,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoCreateComponent } from './components/todo-create/todo-create.component';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromPosts from './store/posts/posts.reducer';
+import { PostsEffects } from './store/posts/posts.effects';
+import { PostsFacade } from './store/posts/posts.facade';
+import { Posts2Component } from './components/posts2/posts2.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +103,7 @@ import { TodoCreateComponent } from './components/todo-create/todo-create.compon
     RxjsSubjectComponent,
     TodosComponent,
     TodoCreateComponent,
+    Posts2Component,
   ],
   imports: [
     CommonModule,
@@ -112,11 +118,14 @@ import { TodoCreateComponent } from './components/todo-create/todo-create.compon
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ todos: todosReducer }, {}),
+    StoreModule.forRoot({ todos: todosReducer,  }, {}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
+    StoreModule.forFeature(fromPosts.POSTS_FEATURE_KEY, fromPosts.reducer),
+    EffectsModule.forFeature([PostsEffects]),
   ],
   providers: [
     AuthService,
@@ -130,6 +139,7 @@ import { TodoCreateComponent } from './components/todo-create/todo-create.compon
       useClass: AuthTokenReqHeaderInterceptor,
       multi: true,
     },
+    PostsFacade,
   ],
   bootstrap: [AppComponent],
   exports: [
