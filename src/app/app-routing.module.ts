@@ -19,6 +19,7 @@ import { SignupComponent } from './pages/auth/signup/signup.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/movies/list/list.component';
+import { ZoneOneComponent } from './zone-one/zone-one.component';
 
 @NgModule({
   imports: [
@@ -86,6 +87,7 @@ import { ListComponent } from './pages/movies/list/list.component';
         { path: 'todos', component: TodosComponent },
         { path: 'todo-create', component: TodoCreateComponent },
         { path: 'posts2', component: Posts2Component },
+        { path: 'zonejs-demo', component: ZoneOneComponent },
         {
           path: '**',
           redirectTo: 'home',

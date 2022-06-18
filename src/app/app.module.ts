@@ -62,6 +62,8 @@ import * as fromPosts from './store/posts/posts.reducer';
 import { PostsEffects } from './store/posts/posts.effects';
 import { PostsFacade } from './store/posts/posts.facade';
 import { Posts2Component } from './components/posts2/posts2.component';
+import { ZoneOneComponent } from './zone-one/zone-one.component';
+import { UiCompsModule } from '@dearvivekkumar/ui-comps';
 
 @NgModule({
   declarations: [
@@ -104,6 +106,7 @@ import { Posts2Component } from './components/posts2/posts2.component';
     TodosComponent,
     TodoCreateComponent,
     Posts2Component,
+    ZoneOneComponent,
   ],
   imports: [
     CommonModule,
@@ -118,7 +121,7 @@ import { Posts2Component } from './components/posts2/posts2.component';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ todos: todosReducer,  }, {}),
+    StoreModule.forRoot({ todos: todosReducer }, {}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
@@ -126,6 +129,7 @@ import { Posts2Component } from './components/posts2/posts2.component';
     }),
     StoreModule.forFeature(fromPosts.POSTS_FEATURE_KEY, fromPosts.reducer),
     EffectsModule.forFeature([PostsEffects]),
+    UiCompsModule,
   ],
   providers: [
     AuthService,
@@ -148,6 +152,7 @@ import { Posts2Component } from './components/posts2/posts2.component';
     MainContentComponent,
     MarksPipe,
     CommonModule,
+    UiCompsModule,
   ],
 })
 export class AppModule {}

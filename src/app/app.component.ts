@@ -72,13 +72,13 @@ export class AppComponent implements OnInit {
 
     // this.callApi();
 
-    const int1$ = interval(5000);
+    // const int1$ = interval(5000);
 
-    const int2$ = interval(400);
+    // const int2$ = interval(400);
 
-    const int3$ = int1$.pipe(switchMap((x) => int2$)).subscribe((x) => {
-      console.log(x);
-    });
+    // const int3$ = int1$.pipe(switchMap((x) => int2$)).subscribe((x) => {
+    //   console.log(x);
+    // });
   }
 
   callApi() {
