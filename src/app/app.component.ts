@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { SwPush, SwUpdate } from '@angular/service-worker';
 import { interval, Observable, of, Subscription } from 'rxjs';
 import { tap, map, filter, mergeMap, switchMap } from 'rxjs/operators';
 import { MyDialogComponent } from './components/my-dialog/my-dialog.component';
@@ -48,7 +49,9 @@ export class AppComponent implements OnInit {
     private httpClient: HttpClient,
     private router: Router,
     public dialog: MatDialog,
-    public userlistService: UserlistService
+    public userlistService: UserlistService,
+    private swUpdate: SwUpdate,
+    private swPush: SwPush
   ) {
     console.log('VK: APP COMPONENT : Constructor');
 
@@ -58,6 +61,14 @@ export class AppComponent implements OnInit {
     //   console.log(d);
     //   this.val = d;
     // });
+
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(() => {
+        if (window.confirm('New version available. Load New Version?')) {
+          window.location.reload();
+        }
+      });
+    }
   }
 
   ngOnDestroy() {
@@ -70,7 +81,7 @@ export class AppComponent implements OnInit {
     this.email = window.localStorage.getItem('email') || '';
     this.isLoggedIn = !!window.localStorage.getItem('token');
 
-    // this.callApi();
+    this.callApi();
 
     // const int1$ = interval(5000);
 
@@ -121,5 +132,19 @@ export class AppComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
     });
+  }
+
+  subscribeToNotification(): void {
+    this.swPush
+      .requestSubscription({
+        serverPublicKey:
+          'BEPAR3rAj7vjmz_PpGf1q7OvSt2iIFKE74_UN8z3UQ4foMZKTO-iIWEOiJuX2sAvUTwuxa2zOKnYDb-CZ7CXQOc',
+      })
+      .then((subscription) => {
+        console.log({ subscription });
+      })
+      .catch((err) => {
+        console.log({ err });
+      });
   }
 }

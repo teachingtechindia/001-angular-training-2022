@@ -64,6 +64,7 @@ import { PostsFacade } from './store/posts/posts.facade';
 import { Posts2Component } from './components/posts2/posts2.component';
 import { ZoneOneComponent } from './zone-one/zone-one.component';
 import { UiCompsModule } from '@dearvivekkumar/ui-comps';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -130,6 +131,12 @@ import { UiCompsModule } from '@dearvivekkumar/ui-comps';
     StoreModule.forFeature(fromPosts.POSTS_FEATURE_KEY, fromPosts.reducer),
     EffectsModule.forFeature([PostsEffects]),
     UiCompsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
   providers: [
     AuthService,
